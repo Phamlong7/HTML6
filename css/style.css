@@ -1,0 +1,82 @@
+/* General styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+.grid figure {
+    margin: 0;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+/* Mobile view */
+@media screen and (max-width: 771px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet view */
+@media screen and (min-width: 772px) and (max-width: 991px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screen view */
+@media screen and (min-width: 992px) {
+    .grid figure:nth-of-type(3n) {
+        grid-column: span 2;
+    }
+}
+
+/* prefers-reduced-motion media query */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark color scheme */
+@media (prefers-color-scheme: dark) {
+    img {
+        background-color: #333;
+        color: #fff;
+        border-color: black;
+    }
+}
